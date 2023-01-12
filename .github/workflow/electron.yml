@@ -1,0 +1,43 @@
+# name of your github action
+name: CI
+
+# this will help you specify where to run
+on:
+  push:
+    branches:
+      # this will run on the electron branch
+      - release
+
+# this is where the magic happens, each job happens in parallel btw
+jobs:
+#  build_on_mac:
+#    runs-on: macOS-latest
+#    steps:
+#      - uses: actions/checkout@master
+#        with:
+#          ref: electron
+#      - uses: actions/setup-node@master
+#        with:
+#          node-version: 16.13.0
+#      - name: see directory
+#        run: ls
+  build_on_ubuntu:
+    runs-on: Ubuntu 20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.13.0'
+        run: npm run build:win
+
+#  build_on_win:
+#    runs-on: windows-2016
+#    steps:
+#      - uses: actions/checkout@master
+#        with:
+#          ref: feature/github-actions
+#      - uses: actions/setup-node@master
+#        with:
+#          node-version: 16.13.0
+#      - name: see directory
+#        run: ls

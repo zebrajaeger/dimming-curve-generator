@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Electron</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+  />
+  <link href="./style.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<div class="form">
+  <label for="steps">Count
+    <input type="number" id="steps" value="256">
+  </label>
+  <label for="pwmResolution">PWM Resolution
+    <input type="number" id="pwmResolution" value="4096">
+  </label>
+  <label for="offset">Offset
+    <input type="number" id="offset" value="256">
+  </label>
+</div>
+<button id="generate">Generate Code and Save</button>
+<script src="./chart-4.1.2.js"></script>
+<script src="./renderer.js"></script>
+</body>
+</html>
