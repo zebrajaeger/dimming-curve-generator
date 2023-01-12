@@ -2,6 +2,8 @@
 
 Application to generate dimming curves for lights
 
+![](doc/electron_cmIzWUYgJf.png)
+
 ## Project Setup
 
 You need NodeJs, available in your path
